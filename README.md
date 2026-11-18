@@ -4,6 +4,8 @@ Reference implementation for **Iterative Scarcity-Guided Exploration: Bootstrapp
 
 ISGE improves a generative bidding policy through iterative exploration. A **Judger** measures trajectory scarcity through reconstruction error, and an **Explorer** combines return and scarcity guidance to collect new experience beyond the current data support. The bidding policy is then updated using the collected experience.
 
+![ISGE framework](assets/ISGE_Framework.png)
+
 <sub>Due to company security restrictions, trained policy checkpoints and associated internal artifacts are not included. This release provides the core method and reference training and integration scripts.</sub>
 
 ## Core components
@@ -77,6 +79,6 @@ Use matching normalization statistics when moving between training, scoring, and
 
 The auction environment and bidding interfaces follow [AuctionNet](https://github.com/alimama-tech/AuctionNet). Refer to its official repository for environment setup and public data resources. The directories in this release follow the AuctionNet layout for adapting the components to that environment.
 
-Before using the scripts, supply your own data and trained models, align the data/checkpoint/scaler paths and run identifiers, and register the intended bidding strategy in the environment. The simulation scripts also reference customized logging and analysis interfaces that need to be matched to your environment.
+To use these scripts, prepare the required data and models, update the paths, and adapt the bidding and logging interfaces to your AuctionNet environment.
 
 The bidding adapter currently defaults to a simulator-assisted cost-matching diagnostic (`cheat=True`); inverse-dynamics action execution is selected with `cheat=False`. This diagnostic and the planning-trace outputs are retained from experimental analysis and should be configured separately from the core ISGE training workflow.
