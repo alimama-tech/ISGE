@@ -2,6 +2,8 @@
 
 Reference implementation for **Iterative Scarcity-Guided Exploration: Bootstrapping Generative Auto-bidding from Narrow Support** (NeurIPS 2026).
 
+[📄 Paper](paper/ISGE_NeurIPS2026.pdf)
+
 ISGE improves a generative bidding policy through iterative exploration. A **Judger** measures trajectory scarcity through reconstruction error, and an **Explorer** combines return and scarcity guidance to collect new experience beyond the current data support. The bidding policy is then updated using the collected experience.
 
 ![ISGE framework](assets/ISGE_Framework.png)
